@@ -1,0 +1,14 @@
+<resources>
+    <!-- 其他已有的内容（如app_name）保持不变 -->
+    <string name="app_name">Test</string> <!-- 你的项目名可能不同，无需修改 -->
+
+    <!-- 新增：动物名称数组（必须与代码中的R.array.animal_names对应） -->
+    <string-array name="animal_names">
+        <item>Lion</item>    <!-- 与imgIds[0]（lion.png）对应 -->
+        <item>Tiger</item>   <!-- 与imgIds[1]（tiger.png）对应 -->
+        <item>Monkey</item>  <!-- 与imgIds[2]（monkey.png）对应 -->
+        <item>Dog</item>     <!-- 与imgIds[3]（dog.png）对应 -->
+        <item>Cat</item>     <!-- 与imgIds[4]（cat.png）对应 -->
+        <item>Elephant</item><!-- 与imgIds[5]（elephant.png）对应 -->
+    </string-array>
+</resources>

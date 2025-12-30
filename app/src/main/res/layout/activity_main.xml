@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Android布局实验——线性布局"
+        android:layout_marginBottom="16dp"
+        style="@style/Widget.Material3.Button"/>
+
+    <Button
+        android:id="@+id/btn_tablelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Android布局实验——表格布局"
+        android:layout_marginBottom="16dp"
+        style="@style/Widget.Material3.Button"/>
+
+    <Button
+        android:id="@+id/btn_constraintlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. Android布局实验——约束布局1"
+        android:layout_marginBottom="16dp"
+        style="@style/Widget.Material3.Button"/>
+
+    <Button
+        android:id="@+id/btn_constraintlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. Android布局实验——约束布局2"
+        style="@style/Widget.Material3.Button"/>
+
+</LinearLayout>

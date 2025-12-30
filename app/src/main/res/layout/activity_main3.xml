@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 标题 -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ConstraintLayoutTest"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 输入标签 -->
+    <TextView
+        android:id="@+id/inputLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="16dp" />
+
+    <!-- 输入框 -->
+    <TextView
+        android:id="@+id/inputValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="0.0"
+        android:textSize="18sp"
+        android:background="#f0f0f0"
+        android:padding="12dp"
+        app:layout_constraintLeft_toRightOf="@id/inputLabel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- 计算器按钮区域 -->
+    <!-- 第一行按钮：7 8 9 • -->
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="7"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputValue"
+        app:layout_constraintRight_toLeftOf="@id/btn8"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="8"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn7"
+        app:layout_constraintTop_toBottomOf="@id/inputValue"
+        app:layout_constraintRight_toLeftOf="@id/btn9"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="9"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn8"
+        app:layout_constraintTop_toBottomOf="@id/inputValue"
+        app:layout_constraintRight_toLeftOf="@id/btnDot1"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btnDot1"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="÷"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn9"
+        app:layout_constraintTop_toBottomOf="@id/inputValue"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp" />
+
+    <!-- 第二行按钮：4 5 6 • -->
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="4"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn7"
+        app:layout_constraintRight_toLeftOf="@id/btn5"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="5"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn4"
+        app:layout_constraintTop_toBottomOf="@id/btn8"
+        app:layout_constraintRight_toLeftOf="@id/btn6"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="6"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn5"
+        app:layout_constraintTop_toBottomOf="@id/btn9"
+        app:layout_constraintRight_toLeftOf="@id/btnDot2"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btnDot2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="×"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn6"
+        app:layout_constraintTop_toBottomOf="@id/btnDot1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp" />
+
+    <!-- 第三行按钮：1 2 3 • -->
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="1"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn4"
+        app:layout_constraintRight_toLeftOf="@id/btn2"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="2"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn1"
+        app:layout_constraintTop_toBottomOf="@id/btn5"
+        app:layout_constraintRight_toLeftOf="@id/btn3"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="3"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn2"
+        app:layout_constraintTop_toBottomOf="@id/btn6"
+        app:layout_constraintRight_toLeftOf="@id/btnDot3"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btnDot3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="+"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn3"
+        app:layout_constraintTop_toBottomOf="@id/btnDot2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp" />
+
+    <!-- 第四行按钮：0 • < • ■ -->
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="."
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn1"
+        app:layout_constraintRight_toLeftOf="@id/btnDot4"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btnDot4"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="0"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btn0"
+        app:layout_constraintTop_toBottomOf="@id/btn2"
+        app:layout_constraintRight_toLeftOf="@id/btnBack"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="="
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btnDot4"
+        app:layout_constraintTop_toBottomOf="@id/btn3"
+        app:layout_constraintRight_toLeftOf="@id/btnSquare"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/btnSquare"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="-"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/btnBack"
+        app:layout_constraintTop_toBottomOf="@id/btnDot3"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
