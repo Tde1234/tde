@@ -16,9 +16,55 @@
 - layout_weight属性实现元素的权重分配
 - gravity和layout_gravity属性控制元素对齐方式
 
+**核心代码**：
+```xml
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="One,One"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="One,Two"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="One,Three"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="One,Four"
+        android:textSize="18sp"
+        android:gravity="center"/>
+</LinearLayout>
+```
+
 **对应文件**：
 - `MainActivity1.java`
 - `activity_main1.xml`
+
+**实验结果截图**：
+  <img src="./运行结果截图/1.png" width="420" alt="线性布局显示效果" />
 
 ### 实验二：表格布局(TableLayout)
 
@@ -28,11 +74,58 @@
 - TableLayout和TableRow的使用
 - stretchColumns属性实现列的自动拉伸
 - gravity属性控制元素对齐（左对齐/右对齐）
-- 分隔线的实现
+
+**核心代码**：
+```xml
+<TableRow
+    android:background="#CCCCCC">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open..."
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:gravity="left"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ctrl-O"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:gravity="right"/>
+</TableRow>
+
+<View
+    android:layout_height="1dp"
+    android:background="#000000"/>
+
+<TableRow
+    android:background="#CCCCCC">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save..."
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:gravity="left"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ctrl-S"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:gravity="right"/>
+</TableRow>
+```
 
 **对应文件**：
 - `MainActivity2.java`
 - `activity_main2.xml`
+
+**实验结果截图**：
+  <img src="./运行结果截图/2.png" width="420" alt="表格布局显示效果" />
 
 ### 实验三：约束布局(ConstraintLayout)1
 
@@ -43,9 +136,65 @@
 - 链式布局(Chain)的使用
 - 约束优先级和偏差值(bias)
 
+**核心代码**：
+```xml
+<Button
+    android:id="@+id/btn7"
+    android:layout_width="0dp"
+    android:layout_height="60dp"
+    android:text="7"
+    android:textSize="18sp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/inputValue"
+    app:layout_constraintRight_toLeftOf="@id/btn8"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="4dp" />
+
+<Button
+    android:id="@+id/btn8"
+    android:layout_width="0dp"
+    android:layout_height="60dp"
+    android:text="8"
+    android:textSize="18sp"
+    app:layout_constraintLeft_toRightOf="@id/btn7"
+    app:layout_constraintTop_toBottomOf="@id/inputValue"
+    app:layout_constraintRight_toLeftOf="@id/btn9"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp" />
+
+<Button
+    android:id="@+id/btn9"
+    android:layout_width="0dp"
+    android:layout_height="60dp"
+    android:text="9"
+    android:textSize="18sp"
+    app:layout_constraintLeft_toRightOf="@id/btn8"
+    app:layout_constraintTop_toBottomOf="@id/inputValue"
+    app:layout_constraintRight_toLeftOf="@id/btnDot1"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp" />
+
+<Button
+    android:id="@+id/btnDot1"
+    android:layout_width="0dp"
+    android:layout_height="60dp"
+    android:text="÷"
+    android:textSize="18sp"
+    app:layout_constraintLeft_toRightOf="@id/btn9"
+    app:layout_constraintTop_toBottomOf="@id/inputValue"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_marginTop="16dp"
+    android:layout_marginLeft="4dp" />
+```
+
 **对应文件**：
 - `MainActivity3.java`
 - `activity_main3.xml`
+
+**实验结果截图**：
+  <img src="./运行结果截图/3.png" width="420" alt="约束布局显示效果" />
 
 ### 实验四：约束布局(ConstraintLayout)2
 
@@ -55,12 +204,101 @@
 - 图片资源的引用和显示
 - 约束布局的权重分配
 - 复杂约束条件的设置
-- 界面的响应式设计
+
+**核心代码**：
+```xml
+<LinearLayout
+    android:id="@+id/ll_space_stations"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/ll_flights"
+    app:layout_constraintHorizontal_weight="1"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp">
+
+    <ImageView
+        android:id="@+id/iv_space_stations"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/space_station_icon"/>
+
+    <TextView
+        android:id="@+id/tv_space_stations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Space Stations"
+        android:textSize="14sp" />
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/ll_flights"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    app:layout_constraintStart_toEndOf="@id/ll_space_stations"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/ll_rovers"
+    app:layout_constraintHorizontal_weight="1"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp">
+
+    <ImageView
+        android:id="@+id/iv_flights"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/rocket_icon"/>
+
+    <TextView
+        android:id="@+id/tv_flights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Flights"
+        android:textSize="14sp" />
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/ll_rovers"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    app:layout_constraintStart_toEndOf="@id/ll_flights"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_weight="1"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="8dp">
+
+    <ImageView
+        android:id="@+id/iv_rovers"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/rover_icon"/>
+
+    <TextView
+        android:id="@+id/tv_rovers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Rovers"
+        android:textSize="14sp" />
+</LinearLayout>
+```
 
 **对应文件**：
 - `MainActivity4.java`
 - `activity_main4.xml`
 - 图片资源：`res/drawable/`目录下的航天相关图片
+
+**实验结果截图**：
+  <img src="./运行结果截图/4.png" width="420" alt="约束布局显示效果" />
 
 ## 项目结构
 
@@ -88,25 +326,8 @@ AndroidStudioProjects/Test/
 └── README.md                              # 本文件
 ```
 
-## 运行方法
 
-### 环境要求
-
-- Android Studio 4.0+ 或其他支持Android开发的IDE
-- JDK 8+ 或兼容版本
-- Android SDK 26+ (Android 8.0 Oreo+)
-
-### 操作步骤
-
-1. 克隆或下载项目到本地
-2. 使用Android Studio打开项目
-3. 连接Android设备或启动模拟器
-4. 点击"Run"按钮或使用快捷键Shift+F10运行项目
-5. 在主界面点击对应按钮进入不同实验
-
-## 技术要点总结
-
-### 布局类型对比
+## 布局类型对比
 
 | 布局类型       | 特点                     | 适用场景                     |
 |--------------|-------------------------|----------------------------|
@@ -114,12 +335,6 @@ AndroidStudioProjects/Test/
 | TableLayout  | 表格结构，行列清晰          | 类似表格或菜单的界面结构        |
 | ConstraintLayout | 灵活强大，约束条件丰富      | 复杂界面布局，需要精确定位元素     |
 
-### 核心概念
-
-- **布局属性**：控制元素在布局中的位置和大小
-- **约束条件**：定义元素之间的关系（如对齐、间距等）
-- **权重分配**：控制元素在可用空间中的分配比例
-- **响应式设计**：确保界面在不同尺寸设备上的良好显示效果
 
 ## 实验总结
 
